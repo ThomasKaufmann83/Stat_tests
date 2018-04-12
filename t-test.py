@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.stats import ttest_ind, ttest_ind_from_stats
+from scipy import stats
 from scipy.special import stdtr
 
 np.random.seed(1)
@@ -43,3 +43,9 @@ print("st.dev a = %g" % (avar/na))
 print("st.dev b  = %g" % (bvar/nb))
 print("n a = %g" % (na))
 print("n b  = %g" % (nb))
+
+from scipy import stats
+
+z_stat, p_val = stats.ranksums(a, b)
+
+print ("MWW RankSum P for a and b =", p_val )
